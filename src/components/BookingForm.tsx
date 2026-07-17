@@ -29,6 +29,10 @@ export function BookingForm() {
   const [note, setNote] = useState("");
   const [ref, setRef] = useState("");
   const [waHref, setWaHref] = useState("");
+  const [sending, setSending] = useState(false);
+  const [sheetStatus, setSheetStatus] = useState<"ok" | "off" | "fail" | null>(
+    null,
+  );
 
   const selected = useMemo(
     () => VEHICLES.find((v) => v.id === vehicle)!,
@@ -46,6 +50,7 @@ export function BookingForm() {
 
   async function finish(e: FormEvent) {
     e.preventDefault();
+    setSending(true);
     const bookingRef = makeRef();
     const payload = {
       name,
@@ -61,17 +66,26 @@ export function BookingForm() {
     };
 
     try {
-      await fetch("/api/book", {
+      const res = await fetch("/api/book", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
+      const data = (await res.json()) as {
+        sheet?: boolean;
+        warning?: string;
+        sheetError?: string | null;
+      };
+      if (data.sheet) setSheetStatus("ok");
+      else if (data.warning) setSheetStatus("off");
+      else setSheetStatus("fail");
     } catch {
-      /* WhatsApp remains primary */
+      setSheetStatus("fail");
     }
 
     setRef(bookingRef);
     setWaHref(waLink(buildBookingWhatsApp(payload)));
+    setSending(false);
     setStep(3);
   }
 
@@ -214,9 +228,10 @@ export function BookingForm() {
                   </button>
                   <button
                     type="submit"
-                    className="flex-1 rounded-full bg-navy py-3 font-display text-sm font-bold text-white"
+                    disabled={sending}
+                    className="flex-1 rounded-full bg-navy py-3 font-display text-sm font-bold text-white disabled:opacity-60"
                   >
-                    {t("book.submit")}
+                    {sending ? t("book.sending") : t("book.submit")}
                   </button>
                 </div>
               </form>
@@ -231,6 +246,19 @@ export function BookingForm() {
                 <p className="mt-2 text-sm text-muted">
                   {t("book.successText", { ref })}
                 </p>
+                {sheetStatus && (
+                  <p
+                    className={`mt-3 text-xs font-semibold ${
+                      sheetStatus === "ok" ? "text-cyan" : "text-muted"
+                    }`}
+                  >
+                    {sheetStatus === "ok"
+                      ? t("book.sheetOk")
+                      : sheetStatus === "off"
+                        ? t("book.sheetOff")
+                        : t("book.sheetFail")}
+                  </p>
+                )}
                 <a
                   href={waHref}
                   target="_blank"

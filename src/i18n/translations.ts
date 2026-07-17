@@ -120,6 +120,10 @@ const fr: Dict = {
   "book.summary": "Récapitulatif",
   "book.privacy":
     "Vos infos servent uniquement à traiter la réservation. Pas de spam.",
+  "book.sending": "Enregistrement…",
+  "book.sheetOk": "Réservation enregistrée dans Google Sheets ✔",
+  "book.sheetOff": "WhatsApp prêt (Google Sheets non connecté côté serveur)",
+  "book.sheetFail": "WhatsApp prêt — enregistrement Sheet à vérifier",
 
   "pro.title": "Résidences & entreprises",
   "pro.sub":
@@ -283,6 +287,10 @@ const en: Dict = {
   "book.openWa": "Send on WhatsApp",
   "book.summary": "Summary",
   "book.privacy": "Your info is only used to process the booking. No spam.",
+  "book.sending": "Saving…",
+  "book.sheetOk": "Booking saved to Google Sheets ✔",
+  "book.sheetOff": "WhatsApp ready (Google Sheets not connected on server)",
+  "book.sheetFail": "WhatsApp ready — Sheet save needs checking",
 
   "pro.title": "Residences & businesses",
   "pro.sub": "Several vehicles same day? Group rate and dedicated slot.",
@@ -443,6 +451,10 @@ const ar: Dict = {
   "book.openWa": "إرسال عبر واتساب",
   "book.summary": "الملخص",
   "book.privacy": "بياناتكم تُستخدم فقط لمعالجة الحجز. بلا رسائل مزعجة.",
+  "book.sending": "جاري الحفظ…",
+  "book.sheetOk": "تم حفظ الحجز في Google Sheets ✔",
+  "book.sheetOff": "واتساب جاهز (Google Sheets غير متصل على السيرفر)",
+  "book.sheetFail": "واتساب جاهز — تحقق من حفظ الـ Sheet",
 
   "pro.title": "الإقامات والشركات",
   "pro.sub": "عدة سيارات في نفس اليوم؟ سعر جماعي وموعد مخصص.",

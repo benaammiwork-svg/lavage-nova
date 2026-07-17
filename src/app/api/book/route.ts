@@ -14,37 +14,62 @@ type BookingBody = {
 };
 
 /**
- * Stores booking locally (demo) and optionally forwards to a Google Sheets /
- * Make.com / Zapier webhook if BOOKING_WEBHOOK_URL is set in .env.local
- *
- * Recommended ops setup for Morocco:
- * 1) Primary: WhatsApp message opened by the client (instant notify)
- * 2) Optional: webhook → Google Sheet for tracking
+ * Receives a booking and appends it to Google Sheets via Apps Script webhook.
+ * Set BOOKING_WEBHOOK_URL in .env.local (see scripts/google-apps-script-booking.js).
  */
 export async function POST(req: Request) {
   try {
     const body = (await req.json()) as BookingBody;
 
     if (!body?.name || !body?.phone || !body?.zone || !body?.vehicle) {
-      return NextResponse.json({ ok: false, error: "missing_fields" }, { status: 400 });
+      return NextResponse.json(
+        { ok: false, error: "missing_fields" },
+        { status: 400 },
+      );
     }
 
     const record = {
       ...body,
+      note: body.note || "",
       receivedAt: new Date().toISOString(),
     };
 
-    const webhook = process.env.BOOKING_WEBHOOK_URL;
-    if (webhook) {
-      await fetch(webhook, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(record),
+    const webhook = process.env.BOOKING_WEBHOOK_URL?.trim();
+    let sheetOk = false;
+    let sheetError: string | null = null;
+
+    if (!webhook) {
+      return NextResponse.json({
+        ok: true,
+        ref: body.ref,
+        sheet: false,
+        warning: "BOOKING_WEBHOOK_URL not configured",
       });
     }
 
-    // Always ok for demo — WhatsApp remains the confirmation channel
-    return NextResponse.json({ ok: true, ref: body.ref, webhook: Boolean(webhook) });
+    try {
+      const res = await fetch(webhook, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(record),
+        redirect: "follow",
+      });
+
+      // Apps Script often returns 200 with text/JSON after redirect
+      sheetOk = res.ok;
+      if (!res.ok) {
+        sheetError = `webhook_status_${res.status}`;
+      }
+    } catch (err) {
+      sheetError = err instanceof Error ? err.message : "webhook_failed";
+    }
+
+    return NextResponse.json({
+      ok: true,
+      ref: body.ref,
+      sheet: sheetOk,
+      sheetError,
+    });
   } catch {
     return NextResponse.json({ ok: false, error: "server_error" }, { status: 500 });
   }
