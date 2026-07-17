@@ -19,21 +19,18 @@ export const VEHICLES: {
   {
     id: "normal",
     price: 100,
-    image:
-      "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=900&q=80",
+    image: "/gallery/ba-sedan-after-v2.png",
   },
   {
     id: "suv",
     price: 150,
-    image:
-      "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=900&q=80",
+    image: "/gallery/ba-suv-after.png",
   },
   {
     id: "moto",
     price: 50,
     priceFrom: true,
-    image:
-      "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=80",
+    image: "/gallery/ba-moto-after.png",
   },
 ];
 
@@ -61,8 +58,8 @@ export const ZONES = [
 export const GALLERY = [
   {
     id: "sedan",
-    before: "/gallery/ba-sedan-before.png",
-    after: "/gallery/ba-sedan-after.png",
+    before: "/gallery/ba-sedan-before-v2.png",
+    after: "/gallery/ba-sedan-after-v2.png",
   },
   {
     id: "suv",
