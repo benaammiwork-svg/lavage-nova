@@ -79,6 +79,7 @@ const fr: Dict = {
   "ba.after": "Après",
   "ba.sedan": "Berline",
   "ba.suv": "SUV",
+  "ba.moto": "Moto",
 
   "why.eyebrow": "Pourquoi Lavage Nova",
   "why.title": "La confiance avant tout",
@@ -242,6 +243,7 @@ const en: Dict = {
   "ba.after": "After",
   "ba.sedan": "Sedan",
   "ba.suv": "SUV",
+  "ba.moto": "Motorcycle",
 
   "why.eyebrow": "Why Lavage Nova",
   "why.title": "Trust first",
@@ -402,6 +404,7 @@ const ar: Dict = {
   "ba.after": "بعد",
   "ba.sedan": "سيدان",
   "ba.suv": "SUV",
+  "ba.moto": "دراجة نارية",
 
   "why.eyebrow": "لماذا Lavage Nova",
   "why.title": "الثقة أولاً",

@@ -91,7 +91,7 @@ export function BeforeAfter() {
           subtitle={t("ba.sub")}
         />
 
-        <div className="mx-auto mt-8 flex max-w-md justify-center gap-2">
+        <div className="mx-auto mt-8 flex max-w-lg flex-wrap justify-center gap-2">
           {GALLERY.map((g, i) => (
             <button
               key={g.id}
@@ -103,16 +103,17 @@ export function BeforeAfter() {
                   : "bg-foam text-navy ring-1 ring-navy/10"
               }`}
             >
-              {t(`ba.${g.id === "sedan" ? "sedan" : "suv"}`)}
+              {t(`ba.${g.id}`)}
             </button>
           ))}
         </div>
 
         <div className="mx-auto mt-8 max-w-4xl">
           <SameCarSlider
+            key={item.id}
             before={item.before}
             after={item.after}
-            label={t(`ba.${item.id === "sedan" ? "sedan" : "suv"}`)}
+            label={t(`ba.${item.id}`)}
           />
         </div>
       </div>

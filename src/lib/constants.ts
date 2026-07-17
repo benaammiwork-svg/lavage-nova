@@ -69,6 +69,11 @@ export const GALLERY = [
     before: "/gallery/ba-suv-before.png",
     after: "/gallery/ba-suv-after.png",
   },
+  {
+    id: "moto",
+    before: "/gallery/ba-moto-before.png",
+    after: "/gallery/ba-moto-after.png",
+  },
 ] as const;
 
 export const TIME_SLOTS = ["08:00–10:00", "10:00–12:00", "14:00–16:00", "16:00–18:00", "18:00–20:00"] as const;
