@@ -67,7 +67,7 @@ export default function RootLayout({
         />
         <LanguageProvider>
           <Navbar />
-          <main className="pb-20 md:pb-8">{children}</main>
+          <main className="pb-24 sm:pb-20 md:pb-8">{children}</main>
           <Footer />
           <WhatsAppSticky />
         </LanguageProvider>
