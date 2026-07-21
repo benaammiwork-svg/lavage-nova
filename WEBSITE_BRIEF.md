@@ -2,7 +2,7 @@
 
 > **Project:** Mobile car wash website (lavage auto à domicile) — Agadir, Morocco  
 > **Brand:** Lavage Nova  
-> **Phone / WhatsApp:** `070 950 5971`  
+> **Phone / WhatsApp:** `0717 810 660`  
 > **Language:** French (primary), optional Darija microcopy later  
 > **Goal of this file:** Single source of truth for positioning, copy, UX, visuals, booking flow, and the final prompt for the AI coder agent.
 
@@ -57,8 +57,8 @@ Tu ne bouges pas. On arrive avec le triporteur. Ta voiture repart impeccable.
 ### 1.5 Contact constants
 | Channel | Value |
 |--------|--------|
-| Phone / Call | `070 950 5971` |
-| WhatsApp | `https://wa.me/212709505971` (normalize local 070 → 212709505971) |
+| Phone / Call | `0717 810 660` |
+| WhatsApp | `https://wa.me/212717810660` (normalize local 0717 → 212717810660) |
 | Prefill booking text | see §7 |
 | City | Agadir & environs |
 | Instagram | *(paste official handle when confirmed — match logo/colors from existing IG/flyer)* |
@@ -178,7 +178,7 @@ Replace stock ASAP with real:
 
 ### 7.1 Meta SEO
 - **Title:** `Lavage Nova | Lavage auto à domicile à Agadir`
-- **Description:** `On vient laver votre voiture chez vous à Agadir. Service pro, rapide et impeccable. Réservez sur WhatsApp : 070 950 5971.`
+- **Description:** `On vient laver votre voiture chez vous à Agadir. Service pro, rapide et impeccable. Réservez sur WhatsApp : 0717 810 660.`
 - **H1 priority keywords:** lavage auto à domicile Agadir, lavage voiture Agadir
 
 ### 7.2 Navigation
@@ -310,7 +310,7 @@ Offers:
 ### 7.13 Final CTA band
 **Title:** Ta voiture mérite mieux qu’une station bondée.  
 **Support:** Envoie ton quartier + pack — on te confirme le créneau.  
-**CTA:** WhatsApp · 070 950 5971  
+**CTA:** WhatsApp · 0717 810 660  
 
 ### 7.14 Footer
 - Logo + “Lavage auto à domicile — Agadir”
@@ -468,7 +468,7 @@ Rules:
 
 - [ ] Brand colors & logo match flyer/IG  
 - [ ] Hero shows **Lavage Nova** strongly + branded triporteur visual  
-- [ ] WhatsApp `070 950 5971` works with prefilled message  
+- [ ] WhatsApp `0717 810 660` works with prefilled message  
 - [ ] Pack selector changes WhatsApp text dynamically  
 - [ ] Mobile sticky CTA works  
 - [ ] Pages load fast, responsive, French copy as written  
@@ -495,7 +495,7 @@ You are my coding agent. Build the full marketing website for **Lavage Nova** (m
    - `assets/triporteur-lavage-nova-branded.png` (hero / coming-to-you)
    - `assets/triporteur-logo-closeup.png` (about/trust)
    - `assets/brand-poster-lavage-nova.png` (brand reference only; do NOT recreate the flyer as the webpage layout)
-5. Phone/WhatsApp: 070 950 5971 → `https://wa.me/212709505971` with prefilled French booking message. Sticky WhatsApp CTA on mobile.
+5. Phone/WhatsApp: 0717 810 660 → `https://wa.me/212717810660` with prefilled French booking message. Sticky WhatsApp CTA on mobile.
 6. Interactive pack selector that updates price hint + WhatsApp prefilled text.
 7. Zone checker for Agadir neighborhoods.
 8. French copy exactly from the brief (you may tighten spacing/line breaks, not the meaning).

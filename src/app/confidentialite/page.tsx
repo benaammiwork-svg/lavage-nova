@@ -12,7 +12,7 @@ export default function PrivacyPage() {
         connectée dans cette version démo.
       </p>
       <p className="mt-3 text-sm leading-relaxed text-muted">
-        Pour toute question : 070 950 5971.
+        Pour toute question : 0717 810 660.
       </p>
     </article>
   );

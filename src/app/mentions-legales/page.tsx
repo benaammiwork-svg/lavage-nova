@@ -9,7 +9,7 @@ export default function MentionsPage() {
         auto à domicile à Agadir (Maroc).
       </p>
       <p className="mt-3 text-muted">
-        Contact : 070 950 5971. Les informations, tarifs et avis affichés sont
+        Contact : 0717 810 660. Les informations, tarifs et avis affichés sont
         indicatifs à des fins de démonstration et seront mis à jour avant le
         lancement commercial.
       </p>

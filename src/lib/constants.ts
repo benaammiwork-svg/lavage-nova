@@ -1,7 +1,7 @@
 export const BRAND = {
   name: "Lavage Nova",
-  phoneDisplay: "0659 049 972",
-  phoneE164: "212659049972",
+  phoneDisplay: "0717 810 660",
+  phoneE164: "212717810660",
   city: "Agadir",
 } as const;
 

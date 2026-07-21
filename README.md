@@ -37,7 +37,7 @@ WhatsApp confirmation still opens after submit (instant notify on your phone).
 ## Brand
 
 - Lavage Nova — navy `#0B1F3A` + cyan `#2BB3FF`
-- WhatsApp: `0659 049 972`
+- WhatsApp: `0717 810 660`
 - Languages: FR (default) / EN / AR
 
 ## Spec

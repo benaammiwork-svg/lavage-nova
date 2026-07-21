@@ -28,7 +28,7 @@ const arabic = Noto_Sans_Arabic({
 export const metadata: Metadata = {
   title: "Lavage Nova | Lavage auto à domicile à Agadir",
   description:
-    "Service professionnel de lavage auto à domicile à Agadir. Tarifs clairs, réservation WhatsApp. 0659 049 972.",
+    "Service professionnel de lavage auto à domicile à Agadir. Tarifs clairs, réservation WhatsApp. 0717 810 660.",
   openGraph: {
     title: "Lavage Nova — Lavage auto à domicile Agadir",
     description: "Nous venons chez vous. Réservez en 1 minute.",
