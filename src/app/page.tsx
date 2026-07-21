@@ -4,6 +4,7 @@ import { DirtGame } from "@/components/DirtGame";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { FinalCta } from "@/components/FinalCta";
 import { Hero } from "@/components/Hero";
+import { LoyaltySection } from "@/components/LoyaltySection";
 import { PackSelector } from "@/components/PackSelector";
 import { ProBanner } from "@/components/ProBanner";
 import { Steps } from "@/components/Steps";
@@ -20,6 +21,7 @@ export default function HomePage() {
       <Steps />
       <PackSelector />
       <BeforeAfter />
+      <LoyaltySection />
       <BookingForm />
       <WhyNova />
       <ZoneChecker />

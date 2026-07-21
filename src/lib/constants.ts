@@ -3,6 +3,9 @@ export const BRAND = {
   phoneDisplay: "0717 810 660",
   phoneE164: "212717810660",
   city: "Agadir",
+  instagram: "lavage_nova",
+  instagramUrl: "https://instagram.com/lavage_nova",
+  slogan: "Votre voiture, notre passion.",
 } as const;
 
 export const WHATSAPP_BASE = `https://wa.me/${BRAND.phoneE164}`;

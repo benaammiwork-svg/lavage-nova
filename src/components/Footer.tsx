@@ -12,7 +12,7 @@ export function Footer() {
     <footer className="bg-navy-wave text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-[1.4fr_1fr_1fr] md:px-6">
         <div>
-          <Logo href="/" showTagline variant="light" />
+          <Logo href="/" showTagline variant="light" size="md" />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/75">
             {t("footer.tag")}
           </p>
@@ -30,6 +30,11 @@ export function Footer() {
             <li>
               <Link href="/#avant-apres" className="hover:text-white">
                 {t("nav.beforeAfter")}
+              </Link>
+            </li>
+            <li>
+              <Link href="/#fidelite" className="hover:text-white">
+                {t("nav.loyalty")}
               </Link>
             </li>
             <li>
@@ -56,7 +61,17 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="hover:text-white"
               >
-                WhatsApp
+                WhatsApp & Appels
+              </a>
+            </li>
+            <li>
+              <a
+                href={BRAND.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white"
+              >
+                Instagram @{BRAND.instagram}
               </a>
             </li>
             <li>Agadir</li>

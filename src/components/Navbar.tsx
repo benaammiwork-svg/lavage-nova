@@ -16,6 +16,7 @@ export function Navbar() {
   const links = [
     { href: "/#services", label: t("nav.services") },
     { href: "/#avant-apres", label: t("nav.beforeAfter") },
+    { href: "/#fidelite", label: t("nav.loyalty") },
     { href: "/#reserver", label: t("nav.book") },
     { href: "/#faq", label: t("nav.faq") },
   ];
@@ -23,7 +24,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-white/40 bg-white/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 md:px-6">
-        <Logo size="sm" />
+        <Logo size="sm" showTagline={false} />
 
         <nav className="hidden items-center gap-7 lg:flex">
           {links.map((l) => (

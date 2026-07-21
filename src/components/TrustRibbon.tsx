@@ -1,22 +1,21 @@
 "use client";
 
-import { Clock3, Home, ShieldCheck, ThumbsUp, Users } from "lucide-react";
+import { Clock3, Droplets, Home, ShieldCheck, ThumbsUp } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
 
 export function TrustRibbon() {
   const { t } = useLang();
   const items = [
-    { icon: ShieldCheck, label: t("trust.products") },
-    { icon: Clock3, label: t("trust.fast") },
-    { icon: Users, label: t("trust.team") },
     { icon: Home, label: t("trust.come") },
+    { icon: Droplets, label: t("trust.products") },
+    { icon: ShieldCheck, label: t("trust.team") },
+    { icon: Clock3, label: t("trust.fast") },
     { icon: ThumbsUp, label: t("trust.satisfaction") },
   ];
 
   return (
     <section className="border-y border-navy/5 bg-white">
       <div className="mx-auto max-w-6xl px-4 py-4 md:px-6 md:py-5">
-        {/* Mobile: horizontal scroll so nothing crushes */}
         <div className="-mx-4 flex gap-3 overflow-x-auto px-4 pb-1 scrollbar-none md:mx-0 md:grid md:grid-cols-5 md:gap-4 md:overflow-visible md:px-0 md:pb-0">
           {items.map(({ icon: Icon, label }) => (
             <div
