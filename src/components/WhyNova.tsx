@@ -9,6 +9,7 @@ import {
   ThumbsUp,
 } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
+import { LOGO_SRC } from "./Logo";
 import { SectionHeading } from "./SectionHeading";
 
 export function WhyNova() {
@@ -27,7 +28,7 @@ export function WhyNova() {
         <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="flex flex-col items-center rounded-[2rem] bg-foam p-8 ring-1 ring-navy/5 sm:p-10">
             <Image
-              src="/brand/logo-lavage-nova.png"
+              src={LOGO_SRC}
               alt="Lavage Nova"
               width={280}
               height={280}

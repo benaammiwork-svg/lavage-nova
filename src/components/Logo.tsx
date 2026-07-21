@@ -6,17 +6,18 @@ type Props = {
   className?: string;
   showTagline?: boolean;
   size?: "sm" | "md" | "lg";
-  /** On dark backgrounds, logo sits on a white rounded plate */
+  /** Text color on dark backgrounds */
   variant?: "default" | "light";
-  /** Show full logo (icon + wordmark) or icon-focused crop */
-  mode?: "full" | "mark";
 };
 
 const SIZES = {
-  sm: { h: 44, w: 120 },
-  md: { h: 56, w: 150 },
-  lg: { h: 88, w: 220 },
+  sm: { h: 48, w: 140 },
+  md: { h: 64, w: 180 },
+  lg: { h: 96, w: 260 },
 } as const;
+
+/** Official transparent logo path (cache-busted filename when replaced) */
+export const LOGO_SRC = "/brand/logo-lavage-nova.png";
 
 export function LogoMark({
   className = "h-10 w-10",
@@ -25,7 +26,7 @@ export function LogoMark({
 }) {
   return (
     <Image
-      src="/brand/logo-lavage-nova.png"
+      src={LOGO_SRC}
       alt=""
       width={80}
       height={80}
@@ -43,24 +44,18 @@ export function Logo({
   variant = "default",
 }: Props) {
   const dim = SIZES[size];
-  const plate =
-    variant === "light"
-      ? "rounded-2xl bg-white px-2 py-1.5 shadow-sm"
-      : "";
 
   const inner = (
     <span className={`inline-flex flex-col items-start gap-0.5 ${className}`}>
-      <span className={`inline-flex items-center ${plate}`}>
-        <Image
-          src="/brand/logo-lavage-nova.png"
-          alt="Lavage Nova"
-          width={dim.w}
-          height={dim.h}
-          className="h-auto w-auto object-contain"
-          style={{ height: dim.h, width: "auto", maxWidth: dim.w }}
-          priority={size !== "lg"}
-        />
-      </span>
+      <Image
+        src={LOGO_SRC}
+        alt="Lavage Nova"
+        width={dim.w}
+        height={dim.h}
+        className="h-auto w-auto object-contain"
+        style={{ height: dim.h, width: "auto", maxWidth: dim.w }}
+        priority={size !== "lg"}
+      />
       {showTagline && (
         <span
           className={`ps-1 text-[10px] font-semibold uppercase tracking-[0.16em] ${
